@@ -1,12 +1,31 @@
-01. Abra o DATABASE ENTRETERIMENTO;
-02. Em "estruturas", acrescentar o campo NACIONALIDADE do tipo varchar(50);
-03. Pesquise a nacionalidade de cada um dos 30 registros desta tabela, e através do comando UPDATE, atualize sua tabela inteira;
-04. Em "estruturas", acrescentar o campo [RANKING] do tipo INTEIRO;
-05. Em "estruturas", acrescentar o campo [RANKING_TIPO] do tipo varchar(50);
-06. Em "estruturas", acrescentar o campo [RANKING_NOME] do tipo varchar(50);
-07. Pesquise na Internet 2 filmes do RANKING _NOME "NETFLIX" (brasil) e acrescente os nomes na tabela, através do comando INSERT (você precisará pesquisar o nome do diretor, ator, atriz, ano, etc...);
-08. Pesquise na Internet 2 filmes do RANKING_NOME "AMAZON PRIME" (brasil) e acrescente os nomes na tabela, através do comando INSERT (você precisará pesquisar o nome do diretor, ator, atriz, ano, etc...);
-09. Pesquise na Internet 2 filmes do RANKING_NOME "(que você conheça)" (brasil) e acrescente os nomes na tabela, através do comando INSERT (você precisará pesquisar o nome do diretor, ator, atriz, ano, etc...);
-10. Utilizando o comando UPDATE, atualize sua tabela, de forma que o [RANKING_NOME] de todos os registros, contenha uma das 3 opções que você criou (exercício de 7 até 9);
-11. Atualize também o [RANKING_TIPO], usando o TIPO "Nacional" ou "Mundial" - Informando se este ranking é para o Brasil (netflix brasil - por exemplo), ou se é ranking Mundial (da netflix - por exemplo)
-12. Atualize os números dos RANKINGs.
+UPDATE `ENTRETERIMENTO` SET `NACIONALIDADE`='Reino Unido' WHERE ID IN (2,5);
+UPDATE `ENTRETERIMENTO` SET `NACIONALIDADE`='Estados Unidos' WHERE ID IN (1,3,4,30,23,26,24,18,16,17,14,12,10,6,7,8);
+UPDATE `ENTRETERIMENTO` SET `NACIONALIDADE`='Espanha' WHERE ID IN (9,13);
+UPDATE `ENTRETERIMENTO` SET `NACIONALIDADE`='Polônia' WHERE ID IN (11);
+UPDATE `ENTRETERIMENTO` SET `NACIONALIDADE`='Brasil' WHERE ID IN (22,29,27,28);
+UPDATE `ENTRETERIMENTO` SET `NACIONALIDADE`='Estados Unidos/Reino Unido' WHERE NOME IN ('Gladiator (Gladiador)');
+UPDATE `ENTRETERIMENTO` SET `NACIONALIDADE`='Estados Unidos/Nova Zelândia' WHERE ID IN (20);
+UPDATE `ENTRETERIMENTO` SET `NACIONALIDADE`='Estados Unidos/Alemanha' WHERE ID IN (21);
+UPDATE `ENTRETERIMENTO` SET `NACIONALIDADE`='Irlanda/Canadá' WHERE ID IN (15);
+UPDATE `ENTRETERIMENTO` SET `NACIONALIDADE`='Estados Unidos/Alemanha/França' WHERE ID IN (25);
+
+UPDATE `ENTRETERIMENTO` SET `RANKING_NOME`=' Netflix' WHERE ID IN (1,2,3,4,5,7,8,9,10,11,12,13,16,17,18,19,22,23,24,25,27,29);
+UPDATE `ENTRETERIMENTO` SET `RANKING_NOME`='Amazon Prime' WHERE ID NOT IN (1,2,3,4,5,7,8,9,10,11,12,13,16,17,18,19,22,23,24,25,27,29);
+UPDATE `ENTRETERIMENTO` SET `RANKING_TIPO`='Nacional' WHERE ID IN (27,28,29,22);
+UPDATE `ENTRETERIMENTO` SET `RANKING_TIPO`='Mundial' WHERE ID  NOT IN (27,28,29,22);
+
+UPDATE `ENTRETERIMENTO` SET `RANKING`='22' WHERE ID = "1"; 
+UPDATE `ENTRETERIMENTO` SET `RANKING`='25' WHERE ID = "2"; 
+UPDATE `ENTRETERIMENTO` SET `RANKING`='21' WHERE ID = "3"; 
+UPDATE `ENTRETERIMENTO` SET `RANKING`='29' WHERE ID = "4"; 
+UPDATE `ENTRETERIMENTO` SET `RANKING`='8' WHERE ID = "5"; 
+UPDATE `ENTRETERIMENTO` SET `RANKING`='24' WHERE ID = "6"; 
+UPDATE `ENTRETERIMENTO` SET `RANKING`='25' WHERE ID = "7"; 
+UPDATE `ENTRETERIMENTO` SET `RANKING`='14' WHERE ID = "8"; 
+UPDATE `ENTRETERIMENTO` SET `RANKING`='31' WHERE ID = "9"; 
+UPDATE `ENTRETERIMENTO` SET `RANKING`='3' WHERE ID = "10";
+UPDATE `ENTRETERIMENTO` SET `RANKING`='30' WHERE ID = "11"; 
+UPDATE `ENTRETERIMENTO` SET `RANKING`='29' WHERE ID = "12"; 
+UPDATE `ENTRETERIMENTO` SET `RANKING`='20' WHERE ID = "13";
+UPDATE `ENTRETERIMENTO` SET `RANKING`='10' WHERE ID = "14"; 
+UPDATE `ENTRETERIMENTO` SET `RANKING`='26' WHERE ID = "15"; 
